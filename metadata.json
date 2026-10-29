@@ -1,0 +1,6 @@
+{
+  "name": "KONNECT",
+  "description": "AI-powered community app for developers and builders where questions find the right people.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

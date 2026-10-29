@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User profiles: readable by all, only owner can edit profile
+    match /users/{userId} {
+      allow read: if true;
+      allow create, update: if isOwner(userId);
+      allow delete: if false;
+    }
+
+    // Questions: readable by all, author can create and update stage
+    match /questions/{questionId} {
+      allow read: if true;
+      allow create: if isAuthenticated() && request.resource.data.authorId == request.auth.uid;
+      allow update: if isAuthenticated();
+      allow delete: if false;
+    }
+
+    // Discussions & replies
+    match /discussions/{discussionId} {
+      allow read: if true;
+      allow create, update: if isAuthenticated();
+      allow delete: if false;
+
+      match /replies/{replyId} {
+        allow read: if true;
+        allow create: if isAuthenticated();
+        allow update, delete: if isOwner(resource.data.authorId);
+      }
+    }
+
+    // Verified Community Memory: readable by all, authenticated can archive solved solutions
+    match /memories/{memoryId} {
+      allow read: if true;
+      allow create: if isAuthenticated();
+      allow update, delete: if false; // Permanent collective knowledge
+    }
+
+    // Connection requests: only sender or receiver can access
+    match /connections/{connectionId} {
+      allow read: if isAuthenticated() && 
+        (request.auth.uid == resource.data.senderId || request.auth.uid == resource.data.receiverId);
+      allow create: if isAuthenticated() && request.resource.data.senderId == request.auth.uid;
+      allow update: if isAuthenticated() && 
+        (request.auth.uid == resource.data.senderId || request.auth.uid == resource.data.receiverId);
+      allow delete: if false;
+    }
+  }
+}

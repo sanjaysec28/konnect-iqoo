@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Ambient soft drop shadow for the 3D 'K' mark -->
+    <path
+        android:pathData="M34,29 C34,26.5 36.5,24.5 39,24.5 L46,24.5 C48.5,24.5 50.5,26.5 50.5,29 L50.5,79 C50.5,81.5 48.5,83.5 46,83.5 L39,83.5 C36.5,83.5 34,81.5 34,79 Z"
+        android:fillColor="#15111111" />
+    <path
+        android:pathData="M48,50 L71,28 C73,26 76,26 78,28 L81,31 C83,33 83,36 81,38 L62,56 L82,76 C84,78 84,81 82,83 L79,86 C77,88 74,88 72,86 L48,62 Z"
+        android:fillColor="#15111111" />
+
+    <!-- Vertical Stem of the K (Physical Soft 3D bar) -->
+    <path
+        android:pathData="M33,28 C33,25.8 34.8,24 37,24 L44,24 C46.2,24 48,25.8 48,28 L48,78 C48,80.2 46.2,82 44,82 L37,82 C34.8,82 33,80.2 33,78 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="33"
+                android:startY="24"
+                android:endX="48"
+                android:endY="82"
+                android:type="linear">
+                <item android:color="#FF242424" android:offset="0.0" />
+                <item android:color="#FF171717" android:offset="0.5" />
+                <item android:color="#FF0D0D0D" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Stem top highlight edge -->
+    <path
+        android:pathData="M35,26 L42,26"
+        android:strokeColor="#40FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+
+    <!-- Upper diagonal arm of the K (3D pill shape) -->
+    <path
+        android:pathData="M46,50 L68,28 C69.5,26.5 72,26.5 73.5,28 L77.5,32 C79,33.5 79,36 77.5,37.5 L58.5,56.5 C57,58 54.5,58 53,56.5 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="46"
+                android:startY="26"
+                android:endX="79"
+                android:endY="58"
+                android:type="linear">
+                <item android:color="#FF2C2C2C" android:offset="0.0" />
+                <item android:color="#FF171717" android:offset="0.6" />
+                <item android:color="#FF111111" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Lower diagonal arm of the K (3D pill shape) -->
+    <path
+        android:pathData="M54,53.5 L74,73.5 C75.5,75 75.5,77.5 74,79 L70,83 C68.5,84.5 66,84.5 64.5,83 L45,63.5 C43.5,62 43.5,59.5 45,58 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="45"
+                android:startY="54"
+                android:endX="75"
+                android:endY="84"
+                android:type="linear">
+                <item android:color="#FF262626" android:offset="0.0" />
+                <item android:color="#FF171717" android:offset="0.6" />
+                <item android:color="#FF0D0D0D" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Central connection node / tactile soft 3D sphere -->
+    <path
+        android:pathData="M48,53 A7,7 0 1,0 48,53.01 Z"
+        android:fillColor="#15111111" />
+    <path
+        android:pathData="M47.5,52 A6,6 0 1,0 47.5,52.01 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="44"
+                android:startY="48"
+                android:endX="51"
+                android:endY="55"
+                android:type="linear">
+                <item android:color="#FFFFFFFF" android:offset="0.0" />
+                <item android:color="#FFE0E0DC" android:offset="0.7" />
+                <item android:color="#FFCACAC7" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Central sphere specular highlight -->
+    <path
+        android:pathData="M46,49.5 A1.5,1.5 0 1,0 46,49.51 Z"
+        android:fillColor="#FFFFFFFF" />
+
+    <!-- Terminal orb on upper branch representing connection point -->
+    <path
+        android:pathData="M73,32.5 A4,4 0 1,0 73,32.51 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="71"
+                android:startY="30"
+                android:endX="75"
+                android:endY="34"
+                android:type="linear">
+                <item android:color="#FFFFFFFF" android:offset="0.0" />
+                <item android:color="#FFD6D6D2" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+</vector>
